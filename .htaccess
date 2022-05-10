@@ -1,0 +1,12 @@
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+DirectoryIndex index.php
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteCond %{REQUEST_FILENAME} ^(.*)\.(php|tpl|ini)$
+RewriteRule ^(.*)$ index.php [L]
+</IfModule>
